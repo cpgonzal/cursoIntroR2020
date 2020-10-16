@@ -332,6 +332,8 @@ histogram(~ ... | ..., data = sleep,
 * El gráfico de barras compara valores de una variable frente a otra de tipo nominal.
 
 
+.pull-left[
+
 
 
 ```r
@@ -343,10 +345,20 @@ colnames(tab_peligro)&lt;-c("peligro","promedio_cerebro")
 
 barplot(promedio_cerebro~peligro,
         data=tab_peligro,
-        col="#8DD3C7",main="Comparación del peso medio cerebro según nivel de peligro")
+        col="#8DD3C7",
+        main="Comparación del peso medio cerebro 
+        según nivel de peligro")
 ```
+]
 
-&lt;img src="R_curso02_files/figure-html/bar02-1.png" style="display: block; margin: auto;" /&gt;
+
+.pull-right[
+
+
+&lt;img src="R_curso02_files/figure-html/bar02b-1.png" style="display: block; margin: auto;" /&gt;
+]
+
+
 
 ---
 
