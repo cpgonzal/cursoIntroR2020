@@ -24,6 +24,9 @@
 .small .remark-code { /*Change made here*/
   font-size: 70% !important;
 }
+.normal  .remark-code { /*Change made here*/
+  font-size: 70% !important;
+}
 
 
 
@@ -78,7 +81,7 @@ h1 {
 
 
 code.r{
-  font-size: 90%;
+  font-size: 70%;
 }
 
 code.r.hljs.remark-code{
