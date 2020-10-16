@@ -326,7 +326,7 @@ histogram(~ ... | ..., data = sleep,
 
 ---
 
-
+class: normal remark-code
 # Visualización básica: gráfico de barras (graphics)
 
 * El gráfico de barras compara valores de una variable frente a otra de tipo nominal.
@@ -339,15 +339,15 @@ histogram(~ ... | ..., data = sleep,
 ```r
 # aggregate es un comando que se utiliza para crear
 # tablas desagregadas de acuerdo a variables de una lista
-tab_peligro&lt;-aggregate(sleep$peso_cerebro, list(sleep$peligro), mean,na.rm=TRUE)
+tab_peligro&lt;-aggregate(sleep$peso_cerebro, 
+                       list(sleep$peligro), mean,na.rm=TRUE)
 colnames(tab_peligro)&lt;-c("peligro","promedio_cerebro")
 
 
 barplot(promedio_cerebro~peligro,
         data=tab_peligro,
         col="#8DD3C7",
-        main="Comparación del peso medio cerebro 
-        según nivel de peligro")
+        main="Comparación peso medio cerebro según nivel peligro")
 ```
 ]
 
