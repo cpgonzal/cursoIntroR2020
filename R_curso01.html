@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Lenguaje R para el procesamiento estadístico y gráficos</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Carlos Pérez González" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/rutgers-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/ninjutsu.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css\custom_css.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Lenguaje R para el procesamiento estadístico y gráficos
+## Curso de introducción
+### Carlos Pérez González
+### Dept. Matemáticas, Estadística e IO, Universidad de La Laguna
+
+---
+
+
+
+
+
+
+# Contenidos
+
+.small[
+* Estadística y R
+* Instalación de R
+* La consola de R y Rstudio
+* Primer script de R utilizando R-studio
+* Introducción a R
+* Estructuras de datos
+  * Vectores
+  * Ejercicio: Vectores
+  * Matrices
+  * Ejercicio: Matrices
+  * Data.frame
+  * Un factor no es igual que un vector
+  * Ejercicio: Data.frame
+  * Lista
+  * Data.frame vs List
+* Rstudio: Características básicas
+* Rstudio: El directorio de trabajo
+* Rstudio: Crear un proyecto (OPCIONAL)
+* Rstudio: Importar un conjunto de datos
+* La ayuda en R
+* Paquetes de R
+]
+
+---
+
+
+# Estadística y R
+
+&lt;center&gt;
+&lt;img src="img/estad_R.jpg" width="60%" alt="R y estadística"/&gt;
+&lt;/center&gt;
+
+* En esta primera parte vamos a dar los primeros pasos en R. Empezamos explicando qué es R y cómo utilizar el programa.
+
+---
+
+# Instalación de R
+
+* La página principal del proyecto R se encuentra en [https://www.r-project.org/](https://www.r-project.org/)
+
+&lt;center&gt;
+&lt;img src="img/project_R.png" width="80%" alt="Web del proyecto R"/&gt;
+&lt;/center&gt;
+
+---
+
+# La consola de R y Rstudio
+
+* Una vez instalado, podríamos empezar a utilizar R simplemente con la consola o terminal
+
+&lt;center&gt;
+&lt;img src="img/icons_R.png" width="30%" alt="Iconos R"/&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;img src="img/terminal_R.jpg" width="60%" alt="Terminal R"/&gt;
+&lt;/center&gt;
+
+
+---
+
+# La consola de R y Rstudio
+
+* Sin embargo, lo más recomendable es utilizar el programa R-studio (de la empresa del mismo nombre) que se encuentra en [https://rstudio.com/](https://rstudio.com/)
+
+&lt;center&gt;
+&lt;img src="img/Rstudio.png" width="80%" alt="Web de R-studio"/&gt;
+&lt;/center&gt;
+
+---
+
+# La consola de R y Rstudio
+
+.pull-left[
+* El programa Rstudio proporciona un IDE para
+
+    * Trabajar con R y gráficos de R de forma interactiva.
+    * Organizar el código y mantener múltiples proyectos.
+    * Gestión de los paquetes de R (instalación, actualización,..).
+    * Compartir código y colaborar con otros usuarios.
+&lt;center&gt;
+&lt;img src="img/icons_R_Rstudio.png" width="80%" alt="Icono R-studio"/&gt;
+&lt;/center&gt;
+
+]
+.pull-right[
+&lt;center&gt;
+&lt;img src="img/Rstudio_program.png" width="120%" alt="R-studio"/&gt;
+&lt;/center&gt;
+]
+
+---
+
+# Primer script de R utilizando R-studio
+
+* Hacemos click en el icono __+__ verde del editor de scripts (izquierdo superior), y elegimos __R Script__.
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_new_Rscript2.png" alt="Nuevo script de R"/&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;img src="img/Rstudio_untitled.png" alt="Untitled1"/&gt;
+&lt;/center&gt;
+
+* Las acciones más interesantes sobre un script de R son:
+
+    * __Disco__: salvar el fichero.
+    * __Lupa__: buscar y reemplazar.
+    * __Varita mágica__: herramientas útiles (lo veremos luego).
+    * __Run__: ejecuta el código seleccionado (__Ctrl+Enter__).
+    * __Re-Run__: ejecuta el último código que seleccionamos.
+    * __Cuaderno__: compila el script R a un fichero HTML (lo veremos luego). 
+    
+#  
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+    &lt;img src="img/R_icon.jpg" width="10%" alt="R"/&gt;
+&lt;p align="center"&gt;
+    &lt;h1&gt;Introducción a los conceptos básicos de R&lt;/h1&gt;
+&lt;/p&gt;
+
+---
+
+# Introducción a R
+
+* Empezamos aprendiendo cómo realizar operaciones aritméticas en R. 
+
+* Escribamos en la consola, o bien en el script, y ejecutamos 
+
+
+```r
+# El símbolo de numeral # es utilizada para hacer comentarios
+# Calcula 3 + 4
+3 + 4
+```
+
+```
+## [1] 7
+```
+
+```r
+# Calcula 6 + 12
+```
+
+---
+
+# Introducción a R
+
+* El uso más simple que se le puede dar a R es el de una calculadora. 
+
+    * Adición: `+`
+    * Resta: `-`
+    * Multiplicación: `*`
+    * División: `/`
+    * Exponenciación: `^`
+    * Modulo: `%%`
+    * Comparación: &lt;,==,&gt;,&lt;=,&gt;=,!=
+
+
+```r
+# Adición, resta, multiplicación y división
+( (5 + 5) - 4 ) /2
+```
+
+```
+## [1] 3
+```
+
+```r
+# Exponenciación. Calcular el cubo de 9
+
+# Calcular el resto de la división de 17 entre 3
+
+# Comparar si 7 es menor que 4
+```
+
+---
+
+# Introducción a R
+
+* Para guardar una valor en una variable lo hacemos mediante el operador __&lt;-__ 
+* También se puede utilizar el operador __=__ aunque lo usual es utilizar __&lt;-__ 
+
+
+```r
+# Guardar el valor de 5 en x
+x &lt;- 5
+
+# Visualiza el contenido de la variable x
+x
+```
+
+```
+## [1] 5
+```
+
+```r
+# Guardar el valor de '6' en y, y visualizar
+
+# Sumar x e y
+```
+
+---
+
+# Introducción a R
+
+* En R hay muchos tipos de datos. Los más básicos son
+
+    * Decimales como 4.5, llamados **numeric** (numéricos).
+    * Números enteros como 4 , llamados **integer** (enteros).
+    * Valores Booleanos (**TRUE** para Verdadero o **FALSE** para Falso), llamados **logical** (lógicos).
+    * Texto o alfanumérico (cadenas de caracteres), llamados **character** (caracteres).
+
+
+```r
+# Declarando las variables de diferentes tipos
+var_nume &lt;- 40
+var_char &lt;- "cuarenta"
+var_logi &lt;- FALSE 
+
+# ¿cómo saber el tipo de una variable?
+class(...)
+```
+
+* En las variables de texto es importante especificar las comillas
+
+```r
+var_char &lt;- cuarenta
+```
+
+
+---
+
+# Estructuras de datos
+
+* Veamos cómo son las estructuras básicas de datos en R. 
+
+&lt;center&gt;
+&lt;img src="img/dataStructuresNew.png" alt="Estructuras de datos"/&gt;
+&lt;/center&gt;
+
+---
+
+# Estructuras de datos: Vectores
+
+* Empezamos por el **vector**. Se trata de un grupo de elementos del mismo tipo o clase (numérico, caracter o lógico).
+
+* Por ejemplo, el vector `\(x=[ 1 \: 2  \: 3  \: 4  \: 5]\)` se expresa en R como
+
+```r
+# Vector que empieza en 1 y acaba en 5 con separación de 1 entre cada elemento
+x&lt;-1:5   
+# Lo más usual es utilizar el operador combinar c()
+x&lt;-c(1,2,3,4,5,8,13)
+y&lt;-c("casa","coche","mesa")
+
+#Longitud de un vector
+length(x)
+
+# Para acceder a un elemento de un vector
+x[2]    # ¿qué elementos selecciona?
+y[1:3]  # ¿qué elementos selecciona?
+x[-1]   # ¿qué elementos selecciona?
+```
+
+---
+
+# Estructuras de datos: Vectores
+
+* ¿Que pasa si los elementos del vector tienen diferente tipo?
+
+```r
+z&lt;-c(1,2,"casa")
+
+# ¿qué ha pasado con el vector z?
+class(...)
+```
+
+* Lo que ha ocurrido en el vector **z** se le llama *coerción* (combinar datos de distinto tipo en un vector)
+
+&lt;center&gt;
+&lt;img src="img/coerce.png" alt="Coerción" width="50%"/&gt;
+&lt;/center&gt;
+
+---
+
+# Estructuras de datos: Vectores
+
+* Los siguientes comandos permiten crear vectores con otros patrones
+
+```r
+# Crear un vector que empieza en 1, termina en 20 y va de 2 en 2
+seq(1,20,by=2)  
+# Repetir un valor un número de veces
+rep(1,5)
+# Repetir un vector un número de veces 
+rep(1:3,each=2,times=3)
+```
+
+---
+
+# Ejercicio: Vectores
+
+* Gimli y Légolas se desafían mutuamente a matar el mayor número de enemigos
+<audio controls="">
+<source src="img/lords.mp3" type="audio/mp3"/>
+</audio>
+&lt;center&gt;
+&lt;img src="img/legolas_gimli.jpg" alt="Légolas &amp; Gimli" width="35%" /&gt;
+&lt;/center&gt;
+
+---
+# Ejercicio: Vectores
+
+* El vector `killed.orcs` tiene en las posiciones impares la cuenta de Légolas y 
+en las posiciones pares la cuenta de Gimli. ¿Quén ha matado más orcos?
+
+
+
+```r
+killed.orcs&lt;-c(2,5,1,0,4,5,13,8,9,10)
+
+legolas&lt;-killed.orcs[...]
+gimli&lt;-killed.orcs[...]
+sum(legolas)&gt;sum(gimli)
+```
+
+&lt;center&gt;
+&lt;img src="img/gimli_orcs.jpg" alt="Gimli with killed orcs" width="45%" /&gt;
+&lt;/center&gt;
+
+---
+# Estructuras de datos: Vectores
+
+* Ahora que ya sabemos cómo se construyen los vectores veamos cómo hacer operaciones con ellos
+
+```r
+# Suma, resta, multiplicación, división y comparación
+x&lt;-c(-2,5,3,0)
+y&lt;-c(1,2,0,0)
+
+x+y
+x-y
+x*y
+x/y  # ¿qué ha pasado con el último elemento?
+x&gt;y
+
+# Realizar la suma y multiplicación de los siguientes vectores 
+# ¿Qué problema se presenta?
+x&lt;-1:5
+y&lt;-1:2
+```
+
+---
+
+# Estructuras de datos: Matrices
+
+* La siguiente estructura es **matrix**. Se trata de una estructura de 2D con elementos del mismo tipo o clase (numérico, caracter o lógico) arreglados de forma rectangular en filas y columnas. 
+
+```r
+# Matriz de 1 hasta 12 con 3 filas y 4 columnas 
+m&lt;-matrix(1:12,nrow=3,ncol=4) 
+m
+# Queremos que la matriz se rellene por filas y no por columnas
+?matrix
+m&lt;-matrix(1:12,nrow=3,ncol=4,....) 
+m
+
+#Clase y dimesion del objeto m
+class(...)
+dim(...)
+```
+
+---
+
+# Estructuras de datos: Matrices
+
+
+&lt;center&gt;
+&lt;img src="img/R_matrix.png" alt="Data frame"/&gt;
+&lt;/center&gt;
+
+
+---
+# Estructuras de datos: Matrices
+
+* Construimos matrices a partir de vectores
+
+
+```r
+# cbind() y rbind() son dos comandos que sriven 
+# para unir vectores en columna o en fila
+x&lt;-1:3
+y&lt;-4:6
+m1&lt;-cbind(x,y)
+m1
+m2&lt;-rbind(x,y)
+m2
+
+# Crear una matriz con la primera columna de las 
+# muertes de Légolas y la segunda con las de Gimli
+```
+
+---
+# Estructuras de datos: Matrices
+
+* De nuevo, cuidado si los vectores no tienen la misma longitud
+
+```r
+x&lt;-1:5
+y&lt;-1:2
+cbind(x,y)
+```
+
+* ¿Cómo se realiza la multiplicación de matrices? Buscar en la ayuda "matrix multiplication" y realizar el producto de las matrices m1 y m2.
+
+```r
+m1%*%m2
+```
+
+---
+# Ejercicio: Matrices
+
+* ¿Qué fruta se consume más y cual es el valor de la producción? (Fuente: [ISTAC](http://www.gobiernodecanarias.org/istac/estadisticas/sectorprimario/))
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;img width="80%" src="img/nispero.jpg" alt="Nísperos"/&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;img width="80%" src="img/aguacate.jpg" alt="Aguacate"/&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;img width="80%" src="img/kiwi.jpg" alt="Kiwis"/&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+* Crear una matriz `frutas` cuyas columnas sea la producción (en 1,000 kg) de estas frutas entre 2014 y 2018.
+
+
+```r
+nispe&lt;-c(212.9,	199.8,	197.4,	196.0,	196.0)
+aguac&lt;-c(8879.8,	11001.1,	9427.2,	10328.0,	9808.0)
+kiwis&lt;-c(55.3, 52.3,	48.0,	46.0,	45.0)
+```
+
+
+
+```r
+# podemos cambiar el nombre de columnas con colnames() y el de filas con rownames()
+frutas&lt;-cbind(... , ... , ...)   
+colnames(frutas)&lt;-c(  ,  ,  )
+rownames(frutas)&lt;-c( ,  ,  ,  ,  )
+```
+
+---
+# Ejercicio: Matrices
+
+* ¿Qué fruta se consume más y cual es el valor de la producción? (Fuente: [ISTAC](http://www.gobiernodecanarias.org/istac/estadisticas/sectorprimario/))
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;img width="80%" src="img/nispero.jpg" alt="Nísperos"/&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;img width="80%" src="img/aguacate.jpg" alt="Aguacate"/&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;img width="80%" src="img/kiwi.jpg" alt="Kiwis"/&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+* Si el precio medio del níspero es 1.5€/kg, el del aguacate es 1.2€/kg y el del kiwi es 1.3€/kg, ¿cuánto es el valor de la producción por cada año?
+
+```r
+precio&lt;-c(1.5,1.2,1.3)
+
+frutas%*%precio
+precio%*%t(frutas)
+```
+
+---
+# Ejercicio: Matrices
+
+* Arya Stark está de visita por el suroeste de Westeros viendo todo aquello.
+
+&lt;img width="50%" src="img/AryaStark.png" alt="Arya Stark"/&gt;
+
+* En su viaje, Arya busca la mejor ruta para ir de Old a Brig pasando antes por una ciudad intermedia para descansar.
+
+
+```r
+dist.arya&lt;-matrix(c(0,120,200,105,120,120,0,40,70,180,200,40,0,10,250,105,70,10,0,75,120,180,75,10,0),nrow=5)
+#vamos a ponerle nombres a las filas y las columnas
+rownames(dist.arya)&lt;-colnames(dist.arya)&lt;-c("Old","Brig","Banda","Honey","Uplands")
+sum(dist.arya[1,3]+dist.arya[3,2])  # ¿se puede calcular mejor aprovechando 
+                                    # que las filas y columnas tiene nombre?
+```
+
+
+---
+# Estructuras de datos: Data.frame
+
+* Veamos ahora la estructura **data.frame**. Similar a la estructura de matrix, solo que ahora las columnas pueden ser de distinto tipo o clase. Es decir, todos los elementos de una columna deben de ser del mismo tipo, pero las columnas pueden ser de distintos tipos.
+* A las columnas deldata.frame las llamaremos **variables** y a las filas **observaciones**.
+
+
+```r
+# Data.frame con 4 variables (observar que las 3 primeras son vectores texto 
+# y la última es numérica)
+matricula&lt;-data.frame(rama="Ciencias",
+                          grado=rep(c("Matemáticas","Física","Biología"),each=2),
+                          genero=rep(c("Mujer","Hombre"),3),
+                          num.alus=c(36,49,24,46,54,46))
+
+#Clase, dimesion y estructura del objeto dat
+class(...)
+dim(...)
+str(...)
+```
+
+---
+# Estructuras de datos: Data.frame
+
+&lt;center&gt;
+&lt;img src="img/R_data_frame.png" alt="Data frame"/&gt;
+&lt;/center&gt;
+
+---
+# Estructuras de datos: Data.frame
+
+* Ahora sí se produce error cuando se intenta crear un **data.frame** utilizando vectores de diferente longitud.
+
+```r
+data.frame(x=1:3,y=1:5)
+```
+
+* Comprobar la clase de cada variable del data.frame `matricula`
+
+```r
+class(matricula$num.alus)
+class(matricula$....) 
+```
+
+
+---
+# Estructuras de datos: Un factor no es igual que un vector
+
+* Un **factor** es un tipo de datos asociado a variables categóricas de un **data.frame** y que tienen un número limitado de categorías que se llaman niveles (**levels**).
+
+```r
+levels(matricula$...)
+```
+
+.pull-left[
+* Es importante distinguir en R si estamos trabajando con una variable numérica (discreta o continua) o categórica, debido a que los modelos estadísticos y los análisis de datos tratan estos tipos de manera diferente.
+
+```r
+meses&lt;-data.frame(mes=c("marzo","abril",
+                       "mayo","junio"),
+                 num.dias=c(31,30,31,30),
+                 stringsAsFactors = FALSE)
+barplot(num.dias~mes,data=meses)   
+# ¿Pero qué ha pasado?
+```
+
+]
+
+.pull-right[
+![](R_curso01_files/figure-html/df19b-1.png)&lt;!-- --&gt;
+]
+
+---
+# Estructuras de datos: Un factor no es igual que un vector
+
+* Habría que especificar que `mes` es un factor y especificar el orden de los niveles.
+
+```r
+meses$mes&lt;-factor(meses$mes,levels=c("marzo","abril","mayo","junio"))
+barplot(num.dias~mes,data=meses)
+```
+
+---
+# Ejercicio: Data.frame
+
+&lt;center&gt;
+&lt;img src="img/solar_system.jpg" alt="List" width="60%" /&gt;
+&lt;/center&gt;
+
+
+
+```r
+planetas &lt;- c("Mercurio", "Venus", "Tierra", "Marte", "Jupiter", 
+              "Saturno", "Urano", "Neptuno");
+tipo &lt;- c("Planeta Terrestre", "Planeta Terrestre", "Planeta Terrestre", 
+          "Planeta Terrestre", "Gigante Gaseoso", "Gigante Gaseoso", 
+          "Gigante Gaseoso", "Gigante Gaseoso")
+diametro &lt;- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
+rotacion &lt;- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67);
+anillos &lt;- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE);
+
+# Crear el data frame:
+planetas_df  &lt;-data.frame(planetas,tipo,diametro,rotacion,anillos)
+```
+
+---
+# Ejercicio: Data.frame
+
+.pull-left[
+
+```r
+# Ver la estructura del data.frame
+planetas_df  &lt;-data.frame(...)
+# Selecciona todos los datos de 
+# los primeros tres planetas
+planetas_cerca &lt;- ...
+
+# Selecciona todos los datos de 
+# los últimos tres planetas
+planetas_lejos &lt;- ...   
+```
+]
+
+.pull-right[
+&lt;center&gt;
+&lt;img width=100% src="img/solar_system.jpg" alt="List"/&gt;
+&lt;/center&gt;
+]
+
+
+```r
+# Selecciona el diámetro de los últimos tres planetas
+planetas_lejos$...
+
+# Selecciona todos los datos de los planetas CON anillos
+planetas_df[planetas_df$...==TRUE]
+subset(planetas_df, subset= ....)
+
+# Ordena los planetas según su diámetro (de mayor a menor)
+posiciones&lt;-order(....,decreasing = TRUE)
+planetas_df_orden &lt;- planetas_df[...]  
+```
+
+
+
+---
+# Estructuras de datos: Lista
+
+* Finalmente, vemos la estructura de lista **list**. Una lista es un grupo de objetos que pueden ser, no sólo de diferente clase, sino también de diferente tamaño. 
+
+
+```r
+# Lista con distintos elementos de la matricula
+lista&lt;-list(curso="2017-18", 
+            convoca=c("Septiembre","Enero","Junio","Julio"),
+            matr=matricula)
+lista
+```
+
+* Muchas de las funciones que se utilizan en R devuelven como resultado una lista de elementos
+
+```r
+histog&lt;-hist(matricula$num.alus)
+histog
+```
+
+---
+# Data.frame vs List
+
+* La diferencia entre data.frame y list se puede describir así
+&lt;center&gt;
+&lt;img src="img/data_frame_straw.png" alt="Data frame" width="80%" /&gt;
+&lt;/center&gt;
+
+&lt;center&gt;
+&lt;img src="img/list_straw.png" alt="List" width="80%" /&gt;
+&lt;/center&gt;
+
+
+---
+# Rstudio: Características básicas
+
+* La estructura de data.frame() es la que se suele utilizar para cargar en R los datos con los que uno desea trabajar.
+
+```r
+read.table(....,file=....,header=...,sep=...,stringsAsFactors = ...)
+```
+
+* El programa RStudio nos ayuda a utilizar este comando gracias a la opción de "Import Dataset"
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_import_dataset.png" width="40%" alt="Importar datos"/&gt;
+&lt;/center&gt;
+
+* Pero antes de probar la opción de importar datos es importante que sepamos algo más de Rstudio.
+
+
+---
+# Rstudio: El directorio de trabajo
+
+* En Rstudio hay un panel que nos permite gestionar los ficheros de nuestro sistema
+&lt;center&gt;
+&lt;img src="img/Rstudio_files_panel.png" width="80%" alt="Panel de archivos"/&gt;
+&lt;/center&gt;
+
+* En este panel podemos seleccionar una carpeta de nuestro ordenador en la que queramos trabajar (hacer click en `...`)  
+
+* Seleccionamos la carpeta que nos interese y en el panel podemos visualizar su contenido.
+
+---
+# Rstudio: El directorio de trabajo
+
+* Si queremos que en este trabajo se guarden y cargen los archivos con los que queramos trabajar, entonces podemos decirle a R que este será nuestro __directorio de trabajo__
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_working_directory.png" width="80%" alt="Directorio de trabajo"/&gt;
+&lt;/center&gt;
+
+* Hacemos click en "Set as working directory" y Rstudio ejecuta el comando el comando `setwd(ruta_a_carpeta)`. 
+* A partir de ahora, a R le será mucho más fácil encontrar los archivos ya que no necesitamos poner la ruta de acceso a los mismos. Podemos pasar directamente a la opción de "Imoprt dataset" para cargar un archivo.
+
+---
+# Rstudio: Crear un proyecto (OPCIONAL)
+
+
+.pull-left[
+* A veces tenemos muchos trabajos con R y no queremos mezclar los scripts, los datos, etc... (por ejemplo, diferentes asignaturas o proyectos de trabajo)
+
+* Rstudio nos da la posibilidad de crear para cada trabajo un proyecto y, así, tenerlo todo bien organizado.
+]
+
+
+.pull-right[
+&lt;center&gt;
+&lt;img src="img/Rstudio_create_proj.png" width="50%" alt="Crear proyecto"/&gt;
+&lt;/center&gt;
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_create_proj_2.png" width="50%" alt="Crear proyecto (II)"/&gt;
+&lt;/center&gt;
+]
+
+
+&lt;center&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;img src="img/Rstudio_create_proj_3.png" width="80%" alt="Crear proyecto (III)"/&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;img src="img/Rstudio_create_proj_4.png" width="80%" alt="Crear proyecto (IV)"/&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+
+---
+# Rstudio: Crear un proyecto (OPCIONAL)
+
+
+* El proyecto nos permite tener todo lo relacionado con un trabajo en una misma carpeta diferenciado de otros trabajos.
+&lt;center&gt;
+&lt;img src="img/Rstudio_create_proj_5.png" width="80%" alt="Crear proyecto (V)"/&gt;
+&lt;/center&gt;
+
+---
+# Rstudio: Crear un proyecto (OPCIONAL)
+
+* Si creamos objetos
+
+```r
+a&lt;-1
+b&lt;-c(1,2,3)
+c&lt;-data.frame(a,b)
+```
+y ahora cerramos el proyecto o el programa Rstudio, nos pregunta si queremos guardar el espacio de trabajo o **Workspace**.
+&lt;center&gt;
+&lt;img src="img/Rstudio_workspace.png" width="50%" alt="Guardar workspace"/&gt;
+&lt;/center&gt;
+
+---
+# Rstudio: Crear un proyecto (OPCIONAL)
+
+* Cuando volvamos a abrir el proyecto, nos recupera todos los objetos que hemos ido creando durante nuestro trabajo. Si queremos borrarlos todos, hacemos click en el icono de la escoba.
+&lt;center&gt;
+&lt;img src="img/Rstudio_environ.png" width="50%" alt="Guardar workspace"/&gt;
+&lt;/center&gt;
+
+* Si cerramos Rstudio, por defecto cuando lo volvamos a arrancar cogerá el último proyecto en el que hayamos estado trabajando.
+
+---
+# Rstudio: Importar un conjunto de datos
+
+* Ahora sí, vamos a importar un conjunto de datos. Descargamos el archivo [https://www.dropbox.com/s/idlz8w9v89ox0v5/ddt.txt?dl=0](https://www.dropbox.com/s/idlz8w9v89ox0v5/ddt.txt?dl=0) en nuestro directorio de trabajo. 
+
+* Vamos a importar el conjunto de datos mediante "Import Dataset"
+&lt;center&gt;
+&lt;img src="img/Rstudio_import_dataset.png" width="20%" alt="Importar datos"/&gt;
+&lt;/center&gt;
+y seleccionamos la opción "From text (base)" (o "From text (readr)").
+
+* Selccionamos el archivo y RStudio deduce casi todas las opciones de importación:
+    * __Heading__: si trae el nombre de la variable.
+    * __Separator__: tipo de separador entre datos.
+    * __Decimal__: símbolo para el punto decimal.
+    * __Quote__: símbolo para los comentarios.
+
+* Al final, los datos se cargan en un `data.frame` de R con el mismo nombre que el fichero de datos (`ddt`).
+
+
+---
+# La ayuda en R
+
+* En R podemos acceder a la ayuda de un comando escribiendo `?` delante del comando que nos interese
+
+```r
+?mean
+```
+
+* También podemos acceder a la ayuda de un comando si lo escribimos en una venta de R-script, lo seleccionamos y pulsamos __F1__
+
+---
+# La ayuda en R
+
+&lt;center&gt;
+&lt;img src="img/R-help.png" width="90%" alt="Ayuda de R"/&gt;
+&lt;/center&gt;
+
+
+---
+# Paquete de R
+
+* Los paquetes en R son colecciones de funciones y conjunto de datos desarrollados por la comunidad de usuarios de R. Estos incrementan la potencialidad de R mejorando las funcionalidades base en R, o añadiendo de nuevas. 
+
+* El repositorio oficial se llama CRAN recoge cerca de 10.000 paquetes publicados. Si alguien quiere instalar un paquete de CRAN lo puede hacer a con el comando __install.packages()__ o a través del menu Tools-&gt;Install Packages
+&lt;center&gt;
+&lt;img src="img/RStudio_install_packages.png" width="50%" alt="Instalar paquete"/&gt;
+&lt;/center&gt;
+
+
+---
+# Paquetes de R
+
+* Existe la posibilidad de instalar paquetes desarrollados por usuarios y ubicados en repositorios como GitHub
+&lt;center&gt;
+&lt;img src="img/Install_GitHub.png" width="100%" alt="Instalar paquete de GitHub"/&gt;
+&lt;/center&gt;
+
+
+
+
+---
+class: inverse, mline, center, middle
+
+# Gracias
+
+
+Esta presentación se ha creado con la librería [**xaringan**](https://github.com/yihui/xaringan),
+utilizando [remark.js](https://remarkjs.com), [**knitr**](http://yihui.org/knitr), y [R Markdown](https://rmarkdown.rstudio.com).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
