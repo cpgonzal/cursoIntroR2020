@@ -41,7 +41,15 @@
 
 .small { font-size: 90% }
 
+.small2 { font-size: 70% }
 
+.title-slide2 .remark-slide-number {
+    display: none;
+    background-color: #fff;
+  	background-position: center top 2px;
+  	background-size: 20%;
+  	border-bottom: 2px solid  #522D80;
+}
 
 /* slide titles */
 .reveal .slides section .slideContent h1 { 
@@ -118,6 +126,15 @@ pre {
 }
 .pull-right ~ * {
   clear: both;
+}
+
+.pull-left2 {
+  float: left;
+  width: 50%;
+}
+.pull-right2 {
+  float: right;
+  width: 50%;
 }
 
 .vertical-center-100 {
