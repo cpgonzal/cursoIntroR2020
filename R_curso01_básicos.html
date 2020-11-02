@@ -15,7 +15,7 @@
 class: center, middle, inverse, title-slide
 
 # Conoce el lenguaje R: desde los conceptos básicos al tratamiento de datos y gráficos
-## Introducción al lenguaje R - conceptos y fundamentos básicos del lenguaje
+## Introducción al lenguaje R - conceptos y fundamentos básicos del lenguaje.
 ### Universidad de La Laguna
 
 ---
@@ -278,10 +278,10 @@ var_char &lt;- cuarenta
 
 ```r
 # Vector que empieza en 1 y acaba en 5 con separación de 1 entre cada elemento
-x&lt;-1:5   
+x &lt;- 1:5   
 # Lo más usual es utilizar el operador combinar c()
-x&lt;-c(1,2,3,4,5,8,13)
-y&lt;-c("casa","coche","mesa")
+x &lt;- c(1,2,3,4,5,8,13)
+y &lt;- c("casa","coche","mesa")
 
 #Longitud de un vector
 length(x)
@@ -299,7 +299,7 @@ x[-1]   # ¿qué elementos selecciona?
 * ¿Que pasa si los elementos del vector tienen diferente tipo?
 
 ```r
-z&lt;-c(1,2,"casa")
+z &lt;- c(1,2,"casa")
 
 # ¿qué ha pasado con el vector z?
 class(...)
@@ -347,10 +347,10 @@ en las posiciones pares la cuenta de Gimli. ¿Quén ha matado más orcos?
 
 
 ```r
-killed.orcs&lt;-c(2,5,1,0,4,5,13,8,9,10)
+killed.orcs &lt;- c(2,5,1,0,4,5,13,8,9,10)
 
-legolas&lt;-killed.orcs[...]  # poner los índices pares que hay de 1 a 10
-gimli&lt;-killed.orcs[...]    # poner los índices impares que hay de 1 a 10
+legolas &lt;- killed.orcs[...]  # poner los índices pares que hay de 1 a 10
+gimli &lt;- killed.orcs[...]    # poner los índices impares que hay de 1 a 10
 sum(legolas)&gt;sum(gimli)
 ```
 
@@ -365,8 +365,8 @@ sum(legolas)&gt;sum(gimli)
 
 ```r
 # Suma, resta, multiplicación, división y comparación
-x&lt;-c(-2,5,3,0)
-y&lt;-c(1,2,0,0)
+x &lt;- c(-2,5,3,0)
+y &lt;- c(1,2,0,0)
 
 x+y
 x-y
@@ -376,8 +376,8 @@ x&gt;y
 
 # Realizar la suma y multiplicación de los siguientes vectores 
 # ¿Qué problema se presenta?
-x&lt;-1:5
-y&lt;-1:2
+x &lt;- 1:5
+y &lt;- 1:2
 ```
 
 ---
@@ -388,11 +388,11 @@ y&lt;-1:2
 
 ```r
 # Matriz de 1 hasta 12 con 3 filas y 4 columnas 
-m&lt;-matrix(1:12,nrow=3,ncol=4) 
+m &lt;- matrix(1:12,nrow=3,ncol=4) 
 m
 # Queremos que la matriz se rellene por filas y no por columnas
 ?matrix
-m&lt;-matrix(1:12,nrow=3,ncol=4,....) 
+m &lt;- matrix(1:12,nrow=3,ncol=4,....) 
 m
 
 #Clase y dimesion del objeto m
@@ -419,11 +419,11 @@ dim(...)
 ```r
 # cbind() y rbind() son dos comandos que sriven 
 # para unir vectores en columna o en fila
-x&lt;-1:3
-y&lt;-4:6
-m1&lt;-cbind(x,y)
+x &lt;- 1:3
+y &lt;- 4:6
+m1 &lt;- cbind(x,y)
 m1
-m2&lt;-rbind(x,y)
+m2 &lt;- rbind(x,y)
 m2
 
 # Crear una matriz con la primera columna de las 
@@ -436,8 +436,8 @@ m2
 * De nuevo, cuidado si los vectores no tienen la misma longitud
 
 ```r
-x&lt;-1:5
-y&lt;-1:2
+x &lt;- 1:5
+y &lt;- 1:2
 cbind(x,y)
 ```
 
@@ -464,18 +464,18 @@ m1%*%m2
 
 
 ```r
-nispe&lt;-c(212.9,	199.8,	197.4,	196.0,	196.0)
-aguac&lt;-c(8879.8,	11001.1,	9427.2,	10328.0,	9808.0)
-kiwis&lt;-c(55.3, 52.3,	48.0,	46.0,	45.0)
+nispe &lt;- c(212.9,	199.8,	197.4,	196.0,	196.0)
+aguac &lt;- c(8879.8,	11001.1,	9427.2,	10328.0,	9808.0)
+kiwis &lt;- c(55.3, 52.3,	48.0,	46.0,	45.0)
 ```
 
 
 
 ```r
 # podemos cambiar el nombre de columnas con colnames() y el de filas con rownames()
-frutas&lt;-cbind(... , ... , ...)   
-colnames(frutas)&lt;-c(  ,  ,  )
-rownames(frutas)&lt;-c( ,  ,  ,  ,  )
+frutas &lt;- cbind(... , ... , ...)   
+colnames(frutas) &lt;- c(  ,  ,  )
+rownames(frutas) &lt;- c( ,  ,  ,  ,  )
 ```
 
 
@@ -490,9 +490,9 @@ rownames(frutas)&lt;-c( ,  ,  ,  ,  )
 
 
 ```r
-dist.arya&lt;-matrix(c(0,120,200,105,120,120,0,40,70,180,200,40,0,10,250,105,70,10,0,75,120,180,75,10,0),nrow=5)
+dist.arya &lt;- matrix(c(0,120,200,105,120,120,0,40,70,180,200,40,0,10,250,105,70,10,0,75,120,180,75,10,0),nrow=5)
 #vamos a ponerle nombres a las filas y las columnas
-rownames(dist.arya)&lt;-colnames(dist.arya)&lt;-c("Old","Brig","Banda","Honey","Uplands")
+rownames(dist.arya) &lt;- colnames(dist.arya)&lt;-c("Old","Brig","Banda","Honey","Uplands")
 sum(dist.arya[1,3]+dist.arya[3,2])  # ¿se puede calcular mejor aprovechando 
                                     # que las filas y columnas tiene nombre?
 ```
@@ -508,7 +508,7 @@ sum(dist.arya[1,3]+dist.arya[3,2])  # ¿se puede calcular mejor aprovechando
 ```r
 # Data.frame con 4 variables (observar que las 3 primeras son vectores texto 
 # y la última es numérica)
-matricula&lt;-data.frame(rama="Ciencias",
+matricula &lt;- data.frame(rama="Ciencias",
                           grado=rep(c("Matemáticas","Física","Biología"),each=2),
                           genero=rep(c("Mujer","Hombre"),3),
                           num.alus=c(36,49,24,46,54,46))
@@ -556,7 +556,7 @@ levels(matricula$...)
 * Es importante distinguir en R si estamos trabajando con una variable numérica (discreta o continua) o categórica, debido a que los modelos estadísticos y los análisis de datos tratan estos tipos de manera diferente.
 
 ```r
-meses&lt;-data.frame(mes=c("marzo","abril",
+meses &lt;- data.frame(mes=c("marzo","abril",
                        "mayo","junio"),
                  num.dias=c(31,30,31,30),
                  stringsAsFactors = FALSE)
@@ -576,7 +576,7 @@ barplot(num.dias~mes,data=meses)
 * Habría que especificar que `mes` es un factor y especificar el orden de los niveles.
 
 ```r
-meses$mes&lt;-factor(meses$mes,levels=c("marzo","abril","mayo","junio"))
+meses$mes &lt;- factor(meses$mes,levels=c("marzo","abril","mayo","junio"))
 barplot(num.dias~mes,data=meses)
 ```
 
@@ -600,7 +600,7 @@ rotacion &lt;- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67);
 anillos &lt;- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE);
 
 # Crear el data frame:
-planetas_df  &lt;-data.frame(planetas,tipo,diametro,rotacion,anillos)
+planetas_df &lt;- data.frame(planetas,tipo,diametro,rotacion,anillos)
 # Ver la estructura del data.frame
 str(...)
 ```
@@ -614,7 +614,7 @@ str(...)
 
 ```r
 # Lista con distintos elementos de la matricula
-lista&lt;-list(curso="2017-18", 
+lista &lt;- list(curso="2017-18", 
             convoca=c("Septiembre","Enero","Junio","Julio"),
             matr=matricula)
 lista
@@ -623,7 +623,7 @@ lista
 * Muchas de las funciones que se utilizan en R devuelven como resultado una lista de elementos
 
 ```r
-histog&lt;-hist(matricula$num.alus)
+histog &lt;- hist(matricula$num.alus)
 histog
 ```
 
@@ -656,161 +656,6 @@ read.table(....,file=....,header=...,sep=...,stringsAsFactors = ...)
 &lt;/center&gt;
 
 * Pero antes de probar la opción de importar datos es importante que sepamos algo más de Rstudio.
-
-
----
-# Rstudio: El directorio de trabajo
-
-* En Rstudio hay un panel que nos permite gestionar los ficheros de nuestro sistema
-&lt;center&gt;
-&lt;img src="img/Rstudio_files_panel.png" width="80%" alt="Panel de archivos"/&gt;
-&lt;/center&gt;
-
-* En este panel podemos seleccionar una carpeta de nuestro ordenador en la que queramos trabajar (hacer click en `...`)  
-
-* Seleccionamos la carpeta que nos interese y en el panel podemos visualizar su contenido.
-
----
-# Rstudio: El directorio de trabajo
-
-* Si queremos que en este trabajo se guarden y cargen los archivos con los que queramos trabajar, entonces podemos decirle a R que este será nuestro __directorio de trabajo__
-
-&lt;center&gt;
-&lt;img src="img/Rstudio_working_directory.png" width="80%" alt="Directorio de trabajo"/&gt;
-&lt;/center&gt;
-
-* Hacemos click en "Set as working directory" y Rstudio ejecuta el comando el comando `setwd(ruta_a_carpeta)`. 
-* A partir de ahora, a R le será mucho más fácil encontrar los archivos ya que no necesitamos poner la ruta de acceso a los mismos. Podemos pasar directamente a la opción de "Imoprt dataset" para cargar un archivo.
-
----
-# Rstudio: Crear un proyecto (OPCIONAL)
-
-
-.pull-left[
-* A veces tenemos muchos trabajos con R y no queremos mezclar los scripts, los datos, etc... (por ejemplo, diferentes asignaturas o proyectos de trabajo)
-
-* Rstudio nos da la posibilidad de crear para cada trabajo un proyecto y, así, tenerlo todo bien organizado.
-]
-
-
-.pull-right[
-&lt;center&gt;
-&lt;img src="img/Rstudio_create_proj.png" width="50%" alt="Crear proyecto"/&gt;
-&lt;/center&gt;
-
-&lt;center&gt;
-&lt;img src="img/Rstudio_create_proj_2.png" width="50%" alt="Crear proyecto (II)"/&gt;
-&lt;/center&gt;
-]
-
-
-&lt;center&gt;
-&lt;table&gt;
-&lt;tr&gt;
-&lt;td&gt;
-&lt;img src="img/Rstudio_create_proj_3.png" width="80%" alt="Crear proyecto (III)"/&gt;
-&lt;/td&gt;
-&lt;td&gt;
-&lt;img src="img/Rstudio_create_proj_4.png" width="80%" alt="Crear proyecto (IV)"/&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-&lt;/center&gt;
-
----
-# Rstudio: Crear un proyecto (OPCIONAL)
-
-
-* El proyecto nos permite tener todo lo relacionado con un trabajo en una misma carpeta diferenciado de otros trabajos.
-&lt;center&gt;
-&lt;img src="img/Rstudio_create_proj_5.png" width="80%" alt="Crear proyecto (V)"/&gt;
-&lt;/center&gt;
-
----
-# Rstudio: Crear un proyecto (OPCIONAL)
-
-* Si creamos objetos
-
-```r
-a&lt;-1
-b&lt;-c(1,2,3)
-c&lt;-data.frame(a,b)
-```
-y ahora cerramos el proyecto o el programa Rstudio, nos pregunta si queremos guardar el espacio de trabajo o **Workspace**.
-&lt;center&gt;
-&lt;img src="img/Rstudio_workspace.png" width="50%" alt="Guardar workspace"/&gt;
-&lt;/center&gt;
-
----
-# Rstudio: Crear un proyecto (OPCIONAL)
-
-* Cuando volvamos a abrir el proyecto, nos recupera todos los objetos que hemos ido creando durante nuestro trabajo. Si queremos borrarlos todos, hacemos click en el icono de la escoba.
-&lt;center&gt;
-&lt;img src="img/Rstudio_environ.png" width="50%" alt="Guardar workspace"/&gt;
-&lt;/center&gt;
-
-* Si cerramos Rstudio, por defecto cuando lo volvamos a arrancar cogerá el último proyecto en el que hayamos estado trabajando.
-
----
-# Rstudio: Importar un conjunto de datos
-
-* Ahora sí, vamos a importar un conjunto de datos. Descargamos el archivo [https://www.dropbox.com/s/idlz8w9v89ox0v5/ddt.txt?dl=0](https://www.dropbox.com/s/idlz8w9v89ox0v5/ddt.txt?dl=0) en nuestro directorio de trabajo. 
-
-* Vamos a importar el conjunto de datos mediante "Import Dataset"
-&lt;center&gt;
-&lt;img src="img/Rstudio_import_dataset.png" width="20%" alt="Importar datos"/&gt;
-&lt;/center&gt;
-y seleccionamos la opción "From text (base)" (o "From text (readr)").
-
-* Seleccionamos el archivo y RStudio deduce casi todas las opciones de importación:
-    * __Heading__: si trae el nombre de la variable.
-    * __Separator__: tipo de separador entre datos.
-    * __Decimal__: símbolo para el punto decimal.
-    * __Quote__: símbolo para los comentarios.
-
-* Al final, los datos se cargan en un `data.frame` de R con el mismo nombre que el fichero de datos (`ddt`).
-
-
----
-# La ayuda en R
-
-* En R podemos acceder a la ayuda de un comando escribiendo `?` delante del comando que nos interese
-
-```r
-?mean
-```
-
-* También podemos acceder a la ayuda de un comando si lo escribimos en una venta de R-script, lo seleccionamos y pulsamos __F1__
-
----
-# La ayuda en R
-
-&lt;center&gt;
-&lt;img src="img/R-help.png" width="90%" alt="Ayuda de R"/&gt;
-&lt;/center&gt;
-
-
----
-# Paquetes de R
-
-* Los paquetes en R son colecciones de funciones y conjunto de datos desarrollados por la comunidad de usuarios de R. Estos incrementan la potencialidad de R mejorando las funcionalidades base en R, o añadiendo de nuevas. 
-
-* El repositorio oficial se llama CRAN recoge cerca de 10.000 paquetes publicados. Si alguien quiere instalar un paquete de CRAN (repositorios públicos) lo puede hacer a con el comando __install.packages()__ o a través del menu __Tools-&gt;Install Packages__
-&lt;center&gt;
-&lt;img src="img/RStudio_install_packages.png" width="50%" alt="Instalar paquete"/&gt;
-&lt;/center&gt;
-
-* La opción __Tools-&gt;Check for Updates__ permite actualizar los paquetes instalados a sus últimas versiones.
-
-
----
-# Paquetes de R
-
-* Existe la posibilidad de instalar paquetes desarrollados por usuarios y ubicados en repositorios como GitHub
-&lt;center&gt;
-&lt;img src="img/Install_GitHub.png" width="100%" alt="Instalar paquete de GitHub"/&gt;
-&lt;/center&gt;
-
 
 
 
