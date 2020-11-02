@@ -1,30 +1,34 @@
-<!DOCTYPE html>
-<html lang="" xml:lang="">
-  <head>
-    <title>Conoce el lenguaje R: desde los conceptos básicos al tratamiento de datos y gráficos</title>
-    <meta charset="utf-8" />
-    <meta name="author" content="" />
-    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
-    <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
-    <link href="libs/remark-css-0.0.1/rutgers-fonts.css" rel="stylesheet" />
-    <link href="libs/remark-css-0.0.1/ninjutsu.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css\custom_css.css" type="text/css" />
-  </head>
-  <body>
-    <textarea id="source">
-class: center, middle, inverse, title-slide
-
-# Conoce el lenguaje R: desde los conceptos básicos al tratamiento de datos y gráficos
-## Introducción al lenguaje R - conceptos y fundamentos básicos del lenguaje.
-### Universidad de La Laguna
-
+---
+title: "Conoce el lenguaje R: desde los conceptos básicos al tratamiento de datos y gráficos"
+subtitle: "Introducción al lenguaje R - conceptos y fundamentos básicos del lenguaje." 
+author: " "
+institute: "Universidad de La Laguna"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    css : ["css/custom_css.css",default, metropolis,rutgers-fonts,ninjutsu]
 ---
 
 
 
 
-
-
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+html_tag_audio <- function(file, type = c("mp3")) {
+  type <- match.arg(type)
+  htmltools::tags$audio(
+    controls = "",
+    htmltools::tags$source(
+      src = file,
+      type = glue::glue("audio/{type}", type = type)
+    )
+  )
+}
+```
 # Contenidos
 
 .small[
@@ -56,9 +60,9 @@ class: center, middle, inverse, title-slide
 
 # Estadística y R
 
-&lt;center&gt;
-&lt;img src="img/estad_R.jpg" width="60%" alt="R y estadística"/&gt;
-&lt;/center&gt;
+<center>
+<img src="img/estad_R.jpg" width="60%" alt="R y estadística"/>
+</center>
 
 * En esta primera parte vamos a dar los primeros pasos en R. Empezamos explicando qué es R y cómo utilizar el programa.
 
@@ -68,9 +72,9 @@ class: center, middle, inverse, title-slide
 
 * La página principal del proyecto R se encuentra en [https://www.r-project.org/](https://www.r-project.org/)
 
-&lt;center&gt;
-&lt;img src="img/project_R.png" width="80%" alt="Web del proyecto R"/&gt;
-&lt;/center&gt;
+<center>
+<img src="img/project_R.png" width="80%" alt="Web del proyecto R"/>
+</center>
 
 ---
 
@@ -78,12 +82,12 @@ class: center, middle, inverse, title-slide
 
 * Una vez instalado, podríamos empezar a utilizar R simplemente con la consola o terminal
 
-&lt;center&gt;
-&lt;img src="img/icons_R.png" width="30%" alt="Iconos R"/&gt;
-&lt;/center&gt;
-&lt;center&gt;
-&lt;img src="img/terminal_R.jpg" width="60%" alt="Terminal R"/&gt;
-&lt;/center&gt;
+<center>
+<img src="img/icons_R.png" width="30%" alt="Iconos R"/>
+</center>
+<center>
+<img src="img/terminal_R.jpg" width="60%" alt="Terminal R"/>
+</center>
 
 
 ---
@@ -92,9 +96,9 @@ class: center, middle, inverse, title-slide
 
 * Sin embargo, lo más recomendable es utilizar el programa R-studio (de la empresa del mismo nombre) que se encuentra en [https://rstudio.com/](https://rstudio.com/)
 
-&lt;center&gt;
-&lt;img src="img/Rstudio.png" width="80%" alt="Web de R-studio"/&gt;
-&lt;/center&gt;
+<center>
+<img src="img/Rstudio.png" width="80%" alt="Web de R-studio"/>
+</center>
 
 ---
 
@@ -107,15 +111,15 @@ class: center, middle, inverse, title-slide
     * Organizar el código y mantener múltiples proyectos.
     * Gestión de los paquetes de R (instalación, actualización,..).
     * Compartir código y colaborar con otros usuarios.
-&lt;center&gt;
-&lt;img src="img/icons_R_Rstudio.png" width="80%" alt="Icono R-studio"/&gt;
-&lt;/center&gt;
+<center>
+<img src="img/icons_R_Rstudio.png" width="80%" alt="Icono R-studio"/>
+</center>
 
 ]
 .pull-right[
-&lt;center&gt;
-&lt;img src="img/Rstudio_program.png" width="120%" alt="R-studio"/&gt;
-&lt;/center&gt;
+<center>
+<img src="img/Rstudio_program.png" width="120%" alt="R-studio"/>
+</center>
 ]
 
 ---
@@ -124,12 +128,12 @@ class: center, middle, inverse, title-slide
 
 * Hacemos click en el icono __+__ verde del editor de scripts (izquierdo superior), y elegimos __R Script__.
 
-&lt;center&gt;
-&lt;img src="img/Rstudio_new_Rscript2.png" alt="Nuevo script de R"/&gt;
-&lt;/center&gt;
-&lt;center&gt;
-&lt;img src="img/Rstudio_untitled.png" alt="Untitled1"/&gt;
-&lt;/center&gt;
+<center>
+<img src="img/Rstudio_new_Rscript2.png" alt="Nuevo script de R"/>
+</center>
+<center>
+<img src="img/Rstudio_untitled.png" alt="Untitled1"/>
+</center>
 
 * Las acciones más interesantes sobre un script de R son:
 
@@ -142,11 +146,11 @@ class: center, middle, inverse, title-slide
     
 #  
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-    &lt;img src="img/R_icon.jpg" width="10%" alt="R"/&gt;
-&lt;p align="center"&gt;
-    &lt;h1&gt;Introducción a los conceptos básicos de R&lt;/h1&gt;
-&lt;/p&gt;
+<br><br><br><br>
+    <img src="img/R_icon.jpg" width="10%" alt="R"/>
+<p align="center">
+    <h1>Introducción a los conceptos básicos de R</h1>
+</p>
 
 ---
 
@@ -156,19 +160,13 @@ class: center, middle, inverse, title-slide
 
 * Escribamos en la consola, o bien en el script, y ejecutamos 
 
-
-```r
+```{r calc01, echo = TRUE}
 # El símbolo de numeral # es utilizada para hacer comentarios
 # Calcula 3 + 4
 3 + 4
-```
 
-```
-## [1] 7
-```
-
-```r
 # Calcula 6 + 12
+
 ```
 
 ---
@@ -183,50 +181,38 @@ class: center, middle, inverse, title-slide
     * División: `/`
     * Exponenciación: `^`
     * Modulo: `%%`
-    * Comparación: &lt;,==,&gt;,&lt;=,&gt;=,!=
+    * Comparación: <,==,>,<=,>=,!=
 
-
-```r
+```{r calc02, echo = TRUE}
 # Adición, resta, multiplicación y división
 ( (5 + 5) - 4 ) /2
-```
 
-```
-## [1] 3
-```
-
-```r
 # Exponenciación. Calcular el cubo de 9
 
 # Calcular el resto de la división de 17 entre 3
 
 # Comparar si 7 es menor que 4
+
 ```
 
 ---
 
 # Introducción a R
 
-* Para guardar una valor en una variable lo hacemos mediante el operador __&lt;-__ 
-* También se puede utilizar el operador __=__ aunque lo usual es utilizar __&lt;-__ 
+* Para guardar una valor en una variable lo hacemos mediante el operador __<-__ 
+* También se puede utilizar el operador __=__ aunque lo usual es utilizar __<-__ 
 
-
-```r
+```{r var03, echo = TRUE}
 # Guardar el valor de 5 en x
-x &lt;- 5
+x <- 5
 
 # Visualiza el contenido de la variable x
 x
-```
 
-```
-## [1] 5
-```
-
-```r
 # Guardar el valor de '6' en y, y visualizar
 
 # Sumar x e y
+
 ```
 
 ---
@@ -240,21 +226,21 @@ x
     * Valores Booleanos (**TRUE** para Verdadero o **FALSE** para Falso), llamados **logical** (lógicos).
     * Texto o alfanumérico (cadenas de caracteres), llamados **character** (caracteres).
 
-
-```r
+```{r var04, echo = TRUE, eval=FALSE}
 # Declarando las variables de diferentes tipos
-var_nume &lt;- 40
-var_char &lt;- "cuarenta"
-var_logi &lt;- FALSE 
+var_nume <- 40
+var_char <- "cuarenta"
+var_logi <- FALSE 
 
 # ¿cómo saber el tipo de una variable?
 class(...)
+
 ```
 
 * En las variables de texto es importante especificar las comillas
+```{r var05, echo = TRUE, eval=FALSE}
+var_char <- cuarenta
 
-```r
-var_char &lt;- cuarenta
 ```
 
 
@@ -264,9 +250,9 @@ var_char &lt;- cuarenta
 
 * Veamos cómo son las estructuras básicas de datos en R. 
 
-&lt;center&gt;
-&lt;img src="img/dataStructuresNew.png" alt="Estructuras de datos"/&gt;
-&lt;/center&gt;
+<center>
+<img src="img/dataStructuresNew.png" alt="Estructuras de datos"/>
+</center>
 
 ---
 
@@ -274,14 +260,13 @@ var_char &lt;- cuarenta
 
 * Empezamos por el **vector**. Se trata de un grupo de elementos del mismo tipo o clase (numérico, caracter o lógico).
 
-* Por ejemplo, el vector `\(x=[ 1 \: 2  \: 3  \: 4  \: 5]\)` se expresa en R como
-
-```r
+* Por ejemplo, el vector $x=[ 1 \: 2  \: 3  \: 4  \: 5]$ se expresa en R como
+```{r vec05, echo = TRUE, eval=FALSE}
 # Vector que empieza en 1 y acaba en 5 con separación de 1 entre cada elemento
-x &lt;- 1:5   
+x <- 1:5   
 # Lo más usual es utilizar el operador combinar c()
-x &lt;- c(1,2,3,4,5,8,13)
-y &lt;- c("casa","coche","mesa")
+x <- c(1,2,3,4,5,8,13)
+y <- c("casa","coche","mesa")
 
 #Longitud de un vector
 length(x)
@@ -290,6 +275,7 @@ length(x)
 x[2]    # ¿qué elementos selecciona?
 y[1:3]  # ¿qué elementos selecciona?
 x[-1]   # ¿qué elementos selecciona?
+
 ```
 
 ---
@@ -297,33 +283,33 @@ x[-1]   # ¿qué elementos selecciona?
 # Estructuras de datos: Vectores
 
 * ¿Que pasa si los elementos del vector tienen diferente tipo?
-
-```r
-z &lt;- c(1,2,"casa")
+```{r vec06, echo = TRUE, eval=FALSE}
+z <- c(1,2,"casa")
 
 # ¿qué ha pasado con el vector z?
 class(...)
+
 ```
 
 * Lo que ha ocurrido en el vector **z** se le llama *coerción* (combinar datos de distinto tipo en un vector)
 
-&lt;center&gt;
-&lt;img src="img/coerce.png" alt="Coerción" width="50%"/&gt;
-&lt;/center&gt;
+<center>
+<img src="img/coerce.png" alt="Coerción" width="50%"/>
+</center>
 
 ---
 
 # Estructuras de datos: Vectores
 
 * Los siguientes comandos permiten crear vectores con otros patrones
-
-```r
+```{r vec07, echo = TRUE, eval=FALSE}
 # Crear un vector que empieza en 1, termina en 20 y va de 2 en 2
 seq(1,20,by=2)  
 # Repetir un valor un número de veces
 rep(1,5)
 # Repetir un vector un número de veces 
 rep(1:3,each=2,times=3)
+
 ```
 
 ---
@@ -331,12 +317,12 @@ rep(1:3,each=2,times=3)
 # Ejercicio: Vectores
 
 * Gimli y Légolas se desafían mutuamente a matar el mayor número de enemigos
-<audio controls="">
-<source src="img/lords.mp3" type="audio/mp3"/>
-</audio>
-&lt;center&gt;
-&lt;img src="img/legolas_gimli.jpg" alt="Légolas &amp; Gimli" width="35%" /&gt;
-&lt;/center&gt;
+```{r}
+html_tag_audio("img/lords.mp3", type = "mp3")
+```
+<center>
+<img src="img/legolas_gimli.jpg" alt="Légolas & Gimli" width="35%" />
+</center>
 
 ---
 # Ejercicio: Vectores
@@ -344,40 +330,42 @@ rep(1:3,each=2,times=3)
 * El vector `killed.orcs` tiene en las posiciones impares la cuenta de Légolas y 
 en las posiciones pares la cuenta de Gimli. ¿Quén ha matado más orcos?
 
+```{r vec08b, echo = FALSE, eval=FALSE}
+legolas <- killed.orcs[(1:10) %% 2 == 1]
+gimli <- killed.orcs[(1:10) %% 2 == 0]
+```
+```{r vec08, echo = TRUE, eval=FALSE}
+killed.orcs <- c(2,5,1,0,4,5,13,8,9,10)
 
+legolas <- killed.orcs[...]  # poner los índices pares que hay de 1 a 10
+gimli <- killed.orcs[...]    # poner los índices impares que hay de 1 a 10
+sum(legolas)>sum(gimli)
 
-```r
-killed.orcs &lt;- c(2,5,1,0,4,5,13,8,9,10)
-
-legolas &lt;- killed.orcs[...]  # poner los índices pares que hay de 1 a 10
-gimli &lt;- killed.orcs[...]    # poner los índices impares que hay de 1 a 10
-sum(legolas)&gt;sum(gimli)
 ```
 
-&lt;center&gt;
-&lt;img src="img/gimli_orcs.jpg" alt="Gimli with killed orcs" width="45%" /&gt;
-&lt;/center&gt;
+<center>
+<img src="img/gimli_orcs.jpg" alt="Gimli with killed orcs" width="45%" />
+</center>
 
 ---
 # Estructuras de datos: Vectores
 
 * Ahora que ya sabemos cómo se construyen los vectores veamos cómo hacer operaciones con ellos
-
-```r
+```{r vec09, echo = TRUE, eval=FALSE}
 # Suma, resta, multiplicación, división y comparación
-x &lt;- c(-2,5,3,0)
-y &lt;- c(1,2,0,0)
+x <- c(-2,5,3,0)
+y <- c(1,2,0,0)
 
 x+y
 x-y
 x*y
 x/y  # ¿qué ha pasado con el último elemento?
-x&gt;y
+x>y
 
 # Realizar la suma y multiplicación de los siguientes vectores 
 # ¿Qué problema se presenta?
-x &lt;- 1:5
-y &lt;- 1:2
+x <- 1:5
+y <- 1:2
 ```
 
 ---
@@ -385,14 +373,13 @@ y &lt;- 1:2
 # Estructuras de datos: Matrices
 
 * La siguiente estructura es **matrix**. Se trata de una estructura de 2D con elementos del mismo tipo o clase (numérico, caracter o lógico) arreglados de forma rectangular en filas y columnas. 
-
-```r
+```{r matr10, echo = TRUE, eval=FALSE}
 # Matriz de 1 hasta 12 con 3 filas y 4 columnas 
-m &lt;- matrix(1:12,nrow=3,ncol=4) 
+m <- matrix(1:12,nrow=3,ncol=4) 
 m
 # Queremos que la matriz se rellene por filas y no por columnas
 ?matrix
-m &lt;- matrix(1:12,nrow=3,ncol=4,....) 
+m <- matrix(1:12,nrow=3,ncol=4,....) 
 m
 
 #Clase y dimesion del objeto m
@@ -405,9 +392,9 @@ dim(...)
 # Estructuras de datos: Matrices
 
 
-&lt;center&gt;
-&lt;img src="img/R_matrix.png" alt="Data frame"/&gt;
-&lt;/center&gt;
+<center>
+<img src="img/R_matrix.png" alt="Data frame"/>
+</center>
 
 
 ---
@@ -415,67 +402,70 @@ dim(...)
 
 * Construimos matrices a partir de vectores
 
-
-```r
+```{r matr10bis, echo = TRUE, eval=FALSE}
 # cbind() y rbind() son dos comandos que sriven 
 # para unir vectores en columna o en fila
-x &lt;- 1:3
-y &lt;- 4:6
-m1 &lt;- cbind(x,y)
+x <- 1:3
+y <- 4:6
+m1 <- cbind(x,y)
 m1
-m2 &lt;- rbind(x,y)
+m2 <- rbind(x,y)
 m2
 
 # Crear una matriz con la primera columna de las 
 # muertes de Légolas y la segunda con las de Gimli
+
 ```
 
 ---
 # Estructuras de datos: Matrices
 
 * De nuevo, cuidado si los vectores no tienen la misma longitud
-
-```r
-x &lt;- 1:5
-y &lt;- 1:2
+```{r matr11, echo = TRUE, eval=FALSE}
+x <- 1:5
+y <- 1:2
 cbind(x,y)
+
 ```
 
 * ¿Cómo se realiza la multiplicación de matrices? Buscar en la ayuda "matrix multiplication" y realizar el producto de las matrices m1 y m2.
-
-```r
+```{r matr12, echo = TRUE, eval=FALSE}
 m1%*%m2
+
 ```
 
 ---
 # Ejercicio: Matrices
 
 * ¿Qué fruta se consume más y cual es el valor de la producción? (Fuente: [ISTAC](http://www.gobiernodecanarias.org/istac/estadisticas/sectorprimario/))
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;&lt;img width="80%" src="img/nispero.jpg" alt="Nísperos"/&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;img width="80%" src="img/aguacate.jpg" alt="Aguacate"/&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;img width="80%" src="img/kiwi.jpg" alt="Kiwis"/&gt;&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
+<table>
+  <tr>
+    <td><img width="80%" src="img/nispero.jpg" alt="Nísperos"/></td>
+    <td><img width="80%" src="img/aguacate.jpg" alt="Aguacate"/></td>
+    <td><img width="80%" src="img/kiwi.jpg" alt="Kiwis"/></td>
+  </tr>
+</table>
 
 
 * Crear una matriz `frutas` cuyas columnas sea la producción (en 1,000 kg) de estas frutas entre 2014 y 2018.
 
-
-```r
-nispe &lt;- c(212.9,	199.8,	197.4,	196.0,	196.0)
-aguac &lt;- c(8879.8,	11001.1,	9427.2,	10328.0,	9808.0)
-kiwis &lt;- c(55.3, 52.3,	48.0,	46.0,	45.0)
+```{r matr13, echo = TRUE, eval=FALSE}
+nispe <- c(212.9,	199.8,	197.4,	196.0,	196.0)
+aguac <- c(8879.8,	11001.1,	9427.2,	10328.0,	9808.0)
+kiwis <- c(55.3, 52.3,	48.0,	46.0,	45.0)
 ```
 
-
-
-```r
+```{r matr13b, echo = FALSE, eval=FALSE}
 # podemos cambiar el nombre de columnas con colnames() y el de filas con rownames()
-frutas &lt;- cbind(... , ... , ...)   
-colnames(frutas) &lt;- c(  ,  ,  )
-rownames(frutas) &lt;- c( ,  ,  ,  ,  )
+frutas <- cbind(nispe,aguac,kiwis)   
+colnames(frutas) <- c("nisperos","aguacates","kiwis")
+rownames(frutas) <- c(2018,2017,2016,2015,2014)
+```
+```{r matr13c, echo = TRUE, eval=FALSE}
+# podemos cambiar el nombre de columnas con colnames() y el de filas con rownames()
+frutas <- cbind(... , ... , ...)   
+colnames(frutas) <- c(  ,  ,  )
+rownames(frutas) <- c( ,  ,  ,  ,  )
 ```
 
 
@@ -484,15 +474,18 @@ rownames(frutas) &lt;- c( ,  ,  ,  ,  )
 
 * Arya Stark está de visita por el suroeste de Westeros viendo todo aquello.
 
-&lt;img width="50%" src="img/AryaStark.png" alt="Arya Stark"/&gt;
+<img width="50%" src="img/AryaStark.png" alt="Arya Stark"/>
 
 * En su viaje, Arya busca la mejor ruta para ir de Old a Brig pasando antes por una ciudad intermedia para descansar.
-
-
-```r
-dist.arya &lt;- matrix(c(0,120,200,105,120,120,0,40,70,180,200,40,0,10,250,105,70,10,0,75,120,180,75,10,0),nrow=5)
+```{r matr15, echo = FALSE, eval=FALSE}
+sum(dist.arya["Old","Banda"]+dist.arya["Banda","Brig"])
+sum(dist.arya["Old","Honey"]+dist.arya["Honey","Brig"])
+sum(dist.arya["Old","Uplands"]+dist.arya["Uplands","Brig"])
+```
+```{r matr15b, echo = TRUE, eval=FALSE}
+dist.arya <- matrix(c(0,120,200,105,120,120,0,40,70,180,200,40,0,10,250,105,70,10,0,75,120,180,75,10,0),nrow=5)
 #vamos a ponerle nombres a las filas y las columnas
-rownames(dist.arya) &lt;- colnames(dist.arya)&lt;-c("Old","Brig","Banda","Honey","Uplands")
+rownames(dist.arya) <- colnames(dist.arya)<-c("Old","Brig","Banda","Honey","Uplands")
 sum(dist.arya[1,3]+dist.arya[3,2])  # ¿se puede calcular mejor aprovechando 
                                     # que las filas y columnas tiene nombre?
 ```
@@ -504,11 +497,10 @@ sum(dist.arya[1,3]+dist.arya[3,2])  # ¿se puede calcular mejor aprovechando
 * Veamos ahora la estructura **data.frame**. Similar a la estructura de matrix, solo que ahora las columnas pueden ser de distinto tipo o clase. Es decir, todos los elementos de una columna deben de ser del mismo tipo, pero las columnas pueden ser de distintos tipos.
 * A las columnas del data.frame las llamaremos **variables** y a las filas **observaciones**.
 
-
-```r
+```{r df15, echo = TRUE, eval=FALSE}
 # Data.frame con 4 variables (observar que las 3 primeras son vectores texto 
 # y la última es numérica)
-matricula &lt;- data.frame(rama="Ciencias",
+matricula <- data.frame(rama="Ciencias",
                           grado=rep(c("Matemáticas","Física","Biología"),each=2),
                           genero=rep(c("Mujer","Hombre"),3),
                           num.alus=c(36,49,24,46,54,46))
@@ -517,27 +509,26 @@ matricula &lt;- data.frame(rama="Ciencias",
 class(...)
 dim(...)
 str(...)
+
 ```
 
 ---
 # Estructuras de datos: Data.frame
 
-&lt;center&gt;
-&lt;img src="img/R_data_frame_v2.png" alt="Data frame"/&gt;
-&lt;/center&gt;
+<center>
+<img src="img/R_data_frame_v2.png" alt="Data frame"/>
+</center>
 
 ---
 # Estructuras de datos: Data.frame
 
 * Ahora sí se produce error cuando se intenta crear un **data.frame** utilizando vectores de diferente longitud.
-
-```r
+```{r df16, echo = TRUE, eval=FALSE}
 data.frame(x=1:3,y=1:5)
 ```
 
 * Comprobar la clase de cada variable del data.frame `matricula`
-
-```r
+```{r df17, echo = TRUE, eval=FALSE}
 class(matricula$num.alus)
 class(matricula$....) 
 ```
@@ -547,16 +538,14 @@ class(matricula$....)
 # Estructuras de datos: Un factor no es igual que un vector
 
 * Un **factor** es un tipo de datos asociado a variables categóricas de un **data.frame** y que tienen un número limitado de categorías que se llaman niveles (**levels**).
-
-```r
+```{r df18, echo = TRUE, eval=FALSE}
 levels(matricula$...)
 ```
 
 .pull-left[
 * Es importante distinguir en R si estamos trabajando con una variable numérica (discreta o continua) o categórica, debido a que los modelos estadísticos y los análisis de datos tratan estos tipos de manera diferente.
-
-```r
-meses &lt;- data.frame(mes=c("marzo","abril",
+```{r df19, echo = TRUE, eval=FALSE, fig.width=5, fig.height=5}
+meses <- data.frame(mes=c("marzo","abril",
                        "mayo","junio"),
                  num.dias=c(31,30,31,30),
                  stringsAsFactors = FALSE)
@@ -567,40 +556,43 @@ barplot(num.dias~mes,data=meses)
 ]
 
 .pull-right[
-![](R_curso01_básicos_files/figure-html/df19b-1.png)&lt;!-- --&gt;
+```{r df19b, echo = FALSE, eval=TRUE, fig.width=5, fig.height=5}
+meses <- data.frame(mes=c("marzo","abril","mayo","junio"),
+                 num.dias=c(31,30,31,30),
+                 stringsAsFactors = FALSE)
+barplot(num.dias~mes,data=meses)   # ¿Pero qué ha pasado?
+```
 ]
 
 ---
 # Estructuras de datos: Un factor no es igual que un vector
 
 * Habría que especificar que `mes` es un factor y especificar el orden de los niveles.
-
-```r
-meses$mes &lt;- factor(meses$mes,levels=c("marzo","abril","mayo","junio"))
+```{r df20, echo = TRUE, eval=FALSE}
+meses$mes <- factor(meses$mes,levels=c("marzo","abril","mayo","junio"))
 barplot(num.dias~mes,data=meses)
 ```
 
 ---
 # Ejercicio: Data.frame
 
-&lt;center&gt;
-&lt;img src="img/solar_system.jpg" alt="List" width="60%" /&gt;
-&lt;/center&gt;
+<center>
+<img src="img/solar_system.jpg" alt="List" width="60%" />
+</center>
 
 
-
-```r
-planetas &lt;- c("Mercurio", "Venus", "Tierra", "Marte", "Jupiter", 
+```{r df21, echo = TRUE, eval=FALSE}
+planetas <- c("Mercurio", "Venus", "Tierra", "Marte", "Jupiter", 
               "Saturno", "Urano", "Neptuno");
-tipo &lt;- c("Planeta Terrestre", "Planeta Terrestre", "Planeta Terrestre", 
+tipo <- c("Planeta Terrestre", "Planeta Terrestre", "Planeta Terrestre", 
           "Planeta Terrestre", "Gigante Gaseoso", "Gigante Gaseoso", 
           "Gigante Gaseoso", "Gigante Gaseoso")
-diametro &lt;- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
-rotacion &lt;- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67);
-anillos &lt;- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE);
+diametro <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
+rotacion <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67);
+anillos <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE);
 
 # Crear el data frame:
-planetas_df &lt;- data.frame(planetas,tipo,diametro,rotacion,anillos)
+planetas_df <- data.frame(planetas,tipo,diametro,rotacion,anillos)
 # Ver la estructura del data.frame
 str(...)
 ```
@@ -611,19 +603,17 @@ str(...)
 
 * Finalmente, vemos la estructura de lista **list**. Una lista es un grupo de objetos que pueden ser, no sólo de diferente clase, sino también de diferente tamaño. 
 
-
-```r
+```{r lista16, echo = TRUE, eval=FALSE}
 # Lista con distintos elementos de la matricula
-lista &lt;- list(curso="2017-18", 
+lista <- list(curso="2017-18", 
             convoca=c("Septiembre","Enero","Junio","Julio"),
             matr=matricula)
 lista
 ```
 
 * Muchas de las funciones que se utilizan en R devuelven como resultado una lista de elementos
-
-```r
-histog &lt;- hist(matricula$num.alus)
+```{r lista17, echo = TRUE, eval=FALSE}
+histog <- hist(matricula$num.alus)
 histog
 ```
 
@@ -631,29 +621,28 @@ histog
 # Data.frame vs List
 
 * La diferencia entre data.frame y list se puede describir así
-&lt;center&gt;
-&lt;img src="img/data_frame_straw.png" alt="Data frame" width="80%" /&gt;
-&lt;/center&gt;
+<center>
+<img src="img/data_frame_straw.png" alt="Data frame" width="80%" />
+</center>
 
-&lt;center&gt;
-&lt;img src="img/list_straw.png" alt="List" width="80%" /&gt;
-&lt;/center&gt;
+<center>
+<img src="img/list_straw.png" alt="List" width="80%" />
+</center>
 
 
 ---
 # Rstudio: Características básicas
 
 * La estructura de data.frame() es la que se suele utilizar para cargar en R los datos con los que uno desea trabajar.
-
-```r
+```{r dffile19, echo = TRUE, eval=FALSE}
 read.table(....,file=....,header=...,sep=...,stringsAsFactors = ...)
 ```
 
 * El programa RStudio nos ayuda a utilizar este comando gracias a la opción de "Import Dataset"
 
-&lt;center&gt;
-&lt;img src="img/Rstudio_import_dataset.png" width="40%" alt="Importar datos"/&gt;
-&lt;/center&gt;
+<center>
+<img src="img/Rstudio_import_dataset.png" width="40%" alt="Importar datos"/>
+</center>
 
 * Pero antes de probar la opción de importar datos es importante que sepamos algo más de Rstudio.
 
@@ -667,126 +656,3 @@ class: inverse, mline, center, middle
 
 Esta presentación se ha creado con la librería [**xaringan**](https://github.com/yihui/xaringan),
 utilizando [remark.js](https://remarkjs.com), [**knitr**](http://yihui.org/knitr), y [R Markdown](https://rmarkdown.rstudio.com).
-    </textarea>
-<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
-<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script>var slideshow = remark.create({
-"highlightStyle": "github",
-"highlightLines": true,
-"countIncrementalSlides": false
-});
-if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
-  window.dispatchEvent(new Event('resize'));
-});
-(function(d) {
-  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
-  if (!r) return;
-  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
-  d.head.appendChild(s);
-})(document);
-
-(function(d) {
-  var el = d.getElementsByClassName("remark-slides-area");
-  if (!el) return;
-  var slide, slides = slideshow.getSlides(), els = el[0].children;
-  for (var i = 1; i < slides.length; i++) {
-    slide = slides[i];
-    if (slide.properties.continued === "true" || slide.properties.count === "false") {
-      els[i - 1].className += ' has-continuation';
-    }
-  }
-  var s = d.createElement("style");
-  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
-  d.head.appendChild(s);
-})(document);
-// delete the temporary CSS (for displaying all slides initially) when the user
-// starts to view slides
-(function() {
-  var deleted = false;
-  slideshow.on('beforeShowSlide', function(slide) {
-    if (deleted) return;
-    var sheets = document.styleSheets, node;
-    for (var i = 0; i < sheets.length; i++) {
-      node = sheets[i].ownerNode;
-      if (node.dataset["target"] !== "print-only") continue;
-      node.parentNode.removeChild(node);
-    }
-    deleted = true;
-  });
-})();
-(function() {
-  "use strict"
-  // Replace <script> tags in slides area to make them executable
-  var scripts = document.querySelectorAll(
-    '.remark-slides-area .remark-slide-container script'
-  );
-  if (!scripts.length) return;
-  for (var i = 0; i < scripts.length; i++) {
-    var s = document.createElement('script');
-    var code = document.createTextNode(scripts[i].textContent);
-    s.appendChild(code);
-    var scriptAttrs = scripts[i].attributes;
-    for (var j = 0; j < scriptAttrs.length; j++) {
-      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
-    }
-    scripts[i].parentElement.replaceChild(s, scripts[i]);
-  }
-})();
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-// adds .remark-code-has-line-highlighted class to <pre> parent elements
-// of code chunks containing highlighted lines with class .remark-code-line-highlighted
-(function(d) {
-  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
-  const preParents = [];
-  const findPreParent = function(line, p = 0) {
-    if (p > 1) return null; // traverse up no further than grandparent
-    const el = line.parentElement;
-    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
-  };
-
-  for (let line of hlines) {
-    let pre = findPreParent(line);
-    if (pre && !preParents.includes(pre)) preParents.push(pre);
-  }
-  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
-})(document);</script>
-
-<script>
-slideshow._releaseMath = function(el) {
-  var i, text, code, codes = el.getElementsByTagName('code');
-  for (i = 0; i < codes.length;) {
-    code = codes[i];
-    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
-      text = code.textContent;
-      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
-          /^\$\$(.|\s)+\$\$$/.test(text) ||
-          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
-        code.outerHTML = code.innerHTML;  // remove <code></code>
-        continue;
-      }
-    }
-    i++;
-  }
-};
-slideshow._releaseMath(document);
-</script>
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-(function () {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
-  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
-    script.src  = script.src.replace(/^https?:/, '');
-  document.getElementsByTagName('head')[0].appendChild(script);
-})();
-</script>
-  </body>
-</html>
