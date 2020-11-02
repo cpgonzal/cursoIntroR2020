@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Conoce el lenguaje R: desde los conceptos básicos al tratamiento de datos y gráficos</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/rutgers-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/ninjutsu.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css\custom_css.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Conoce el lenguaje R: desde los conceptos básicos al tratamiento de datos y gráficos
+## Introducción al lenguaje R - introducción a RStudio e informes.
+### Universidad de La Laguna
+
+---
+
+
+
+
+
+
+# Contenidos
+
+.small2[
+* ¿Qué es RStudio?
+* Características de Rstudio
+* Descripción del entorno
+* Panel de consola y terminal
+  + Consola
+  + Terminal
+* Panel de entorno de trabajo e historial
+  + Import Dataset
+  + Entorno de trabajo
+* Panel de ficheros, gráficos y ayuda
+  + Directorio de trabajo
+  + La ayuda en R
+  + Paquetes de R
+* Menus en RStudio (OPCIONAL)
+  + Menú File
+  + Menú Edit
+  + Menú Code
+  + Menú View
+  + Menú Plots
+  + Menú Session
+  + Menú Build
+  + Menú Debug
+  + Menú Profile
+  + Menú Tools
+  + Menú Help
+* Proyectos en RStudio (OPCIONAL)
+  + Crear un proyecto
+  
+
+
+]
+
+
+---
+# ¿Qué es RStudio?
+
+* RStudio es una herramienta __IDE (_Integrated Development Environment_)__ para __R__, libre y gratuita que facilita:
+    * Trabajar con R y gráficos de R de forma interactiva.
+    * Organizar el código y mantener múltiples proyectos.
+    * Gestión de los paquetes de R (instalación, actualización,..).
+    * Crear y compartir informes (utilizando un lenguaje llamado markdown).
+    * Compartir código y colaborar con otros usuarios.
+* RStudio es un programa desarrollado por la empresa del mismo nombre (la empresa ofrece servicios adicionales de consultoría y formación).
+* RStudio __NO__ realiza ninguna operación estadística. Solo facilita realizar dichas operaciones sobre R.
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_preview.png" width="50%" alt="RStudio"/&gt; 
+&lt;/center&gt;
+
+
+---
+# Características de Rstudio
+
+* Integración de la consola de R dentro de Rstudio (se pueden teclear comandos de R directamente).
+
+* Ejecución de código (permite ejecutar código directamente desde un fichero de script).
+
+* Resaltado de la sintaxis (realiza un coloreado automático de los instrucciones y de las funciones).
+
+* Ayuda con los paréntesis, corchetes y comillas (autocompleta estos símbolos al abrirlos).
+
+* Completado de comandos (completa los comandos mientras se escriben usando la tecla `Tab`).
+
+* Navegador de objetos (se pueden inspeccionar todos los objetos de la sesión de R).
+
+---
+# Características de Rstudio
+
+* Gestión del historial de comandos.
+
+* Navegación del código en la ventana de script (mediante secciones que finalizan en `----`).
+
+* Importación y visualización de datos.
+
+* Integración de gráficos (manipulación, zoom y exportación).
+
+* Otros aspectos destacables son la gestión de proyectos (se puede cambiar de un proyecto a otro fácilmente), el control de versiones (se integra bien con `git` y `svn`) y la generación de documentos (tipo PDF, HTML y otros más avanzados con un solo click)
+
+
+---
+# Descripción del entorno
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_panels.png" width="90%" alt="RStudio"/&gt; 
+&lt;/center&gt;
+
+---
+class: inverse right middle title-slide2
+
+# Panel de consola y terminal
+
+---
+# Panel de consola y terminal: Consola
+
+Desde RStudio podemos acceder a la consola de R (permite introducir comandos y sentencias para ejecutar de forma inmediata). Cada línea comienza con el símbolo `&gt; `, a continuación se introduce el comando y se ejecuta al pulsar `&lt;Enter&gt;`.
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_console.png" width="40%" alt="RStudio consola"/&gt; 
+&lt;/center&gt;
+
+La consola de R tiene algunas características muy interesantes. 
+
+* Autocierre de paréntesis, corchetes, llaves, comillas, ....
+```
+# observar cómo se añade el paréntesis de cerrar al introducir el paréntesis de abrir
+x&lt;-c(1)   
+```
+
+
+---
+# Panel de consola y terminal: Consola
+
+* Autocompletado de comandos.
+```
+# empezar a escribir el comando siguiente 
+sub
+# observar el listado de comandos que comienzan por sub, moverse a subset 
+# y pulsar la tecla &lt;Tab&gt;
+subset()
+# ahora volver a pulsar &lt;Tab&gt; para ver los argumentos con los que se invoca la función
+```
+
+---
+# Panel de consola y terminal: Consola
+
+* Historial de comandos: Podemos revisar los comandos que hemos introducido de varias formas
+    * Pulsando las teclas de fecha arriba (&amp;#x25B2;) se retrocede uno a uno hacia atrás. 
+    * Pulsando __Ctrl+&amp;#x25B2;__ se desplega un panel con los comandos históricos.
+    * Revisando la pestaña __History__ al lado de __Environment__
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_history.png" width="60%" alt="RStudio history"/&gt; 
+&lt;/center&gt;
+
+En esta pestaña __History__ se pueden seleccionar uno o varios comandos usando la tecla `&lt;Shift&gt;` y luego ejecutar pulsando `&lt;Enter&gt;` o pulsando en __To Console__. El historial se puede borrar parcialmente con `&lt;Supr&gt;` o completamente haciendo click en el botón de la escoba.  
+
+
+---
+# Panel de consola y terminal: Consola
+
+
+* Control de ejecución de comandos multilínea: Cuando se introduce un comando de R en varias líneas, R utiliza el símbolo `+` al principio de la línea hasta que se complete el comando.
+&lt;center&gt;
+&lt;img src="img/Rstudio_console2.png" width="30%" alt="RStudio consola multilínea"/&gt; 
+&lt;/center&gt;
+
+**IMPORTANTE** Muchas veces, si no se ha cerrado correctamente un paréntesis, corchete, llave, comillas, ....la consola se queda en este estado temporal hasta que se introduzca el correspondiente caracter de cierre o pulsando `&lt;ESC&gt;`. La única forma de "desbloquear" R consiste en corregir esta omisión aquí mismo en la consola o cerrando la sesión de R (menú `Session`).
+
+* Control de ejecución de comando: Cuando se introduce un comando de R que tarda bastante en ejecutar aparece un icono rojo de `STOP` con el cual se puede interrumpir la ejecución en caso de que la ejecución se alargue demasiado.
+&lt;center&gt;
+&lt;img src="img/Rstudio_console3.png" width="40%" alt="RStudio consola ejecución"/&gt; 
+&lt;/center&gt;
+
+
+---
+# Panel de consola y terminal: Terminal
+
+* La pestaña __Terminal__ permite ejecutar desde dentro de RStudio un comando de sistema 
+&lt;center&gt;
+&lt;img src="img/Rstudio_terminal.png" width="80%" alt="RStudio terminal"/&gt; 
+&lt;/center&gt;
+
+---
+class: inverse right middle title-slide2
+
+# Panel de entorno de trabajo e historial
+
+---
+# Panel de entorno de trabajo e historial: Import Dataset
+
+* Ya hemos visto que en RStudio existe la opción de cargar datos externos a través de "Import Dataset" en la pestaña __Environment__ 
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_import_dataset.png" width="40%" alt="Importar datos"/&gt;
+&lt;/center&gt;
+
+
+---
+# Panel de entorno de trabajo e historial: Import Dataset
+
+* Hay dos opciones básicas para cargar datos en formato plano (*.txt, *.csv) 
+
+.pull-left2[
+
+a) con read.table() o read.csv() de la librería __base__
+&lt;center&gt;
+&lt;img src="img/Rstudio_read_base.png" width="90%" alt="From Text (base)"/&gt;
+&lt;/center&gt;
+&lt;br/&gt;
+]
+
+.pull-right2[
+
+b) con read\_csv() de la librería __readr__
+&lt;center&gt;
+&lt;img src="img/Rstudio_read_readr.png" width="90%" alt="From Text (readr)"/&gt;
+&lt;/center&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+]
+
+
+* También se pueden cargar archivos de otros formatos (*.xls, *.ods, *.sav, *.sas)
+
+---
+# Panel de entorno de trabajo e historial: Import Dataset
+
+* Ahora sí, vamos a importar un conjunto de datos. Descargamos el archivo [https://raw.githubusercontent.com/cpgonzal/cursoIntroR2018/gh-pages/ddt.txt](https://raw.githubusercontent.com/cpgonzal/cursoIntroR2018/gh-pages/ddt.txt) en nuestro directorio de trabajo. 
+
+* Vamos a importar el conjunto de datos mediante "Import Dataset"
+&lt;center&gt;
+&lt;img src="img/Rstudio_import_dataset.png" width="20%" alt="Importar datos"/&gt;
+&lt;/center&gt;
+y seleccionamos la opción "From text (base)" (o "From text (readr)").
+
+* Por ejemplo, con la opción "From text (base)" seleccionamos el archivo y RStudio deduce casi todas las opciones de importación:
+    * __Heading__: si trae el nombre de la variable.
+    * __Separator__: tipo de separador entre datos.
+    * __Decimal__: símbolo para el punto decimal.
+    * __Quote__: símbolo para los comentarios.
+
+
+---
+# Panel de entorno de trabajo e historial: Entorno de trabajo
+
+* Además de la opción de "Import Dataset", en la pestaña __Environment__ podemos observar los objetos que hemos creado en nuestra sesión de R
+
+* Supongamos que creamos las siguientes estructuras de datos
+
+```r
+A.variable&lt;-1
+B.vector&lt;-1:5
+C.lista&lt;-list(elem1=1,elem2=1:3,elem3=matrix(1:6,ncol=2),elem4=data.frame(col1=1:3,col2=5:7))
+D.matriz&lt;-matrix(1:6,nrow=3)
+E.dataframe&lt;-data.frame(col1=1:4,col2=c(34.1,23.4,36.3,29.7))
+```
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_environment1.png" width="80%" alt="RStudio workspace"/&gt; 
+&lt;/center&gt;
+
+---
+# Panel de entorno de trabajo e historial: Entorno de trabajo
+
+* Podemos examinar los atributos de los objetos pulsando en el icono de color azul y blanco. Si pinchamos sobre un objeto de tipo `Data` podemos visualizar las estructuras de datos que contiene.
+&lt;center&gt;
+&lt;img src="img/Rstudio_environment2.png" width="80%" alt="RStudio workspace"/&gt; 
+&lt;/center&gt;
+
+---
+class: inverse right middle title-slide2
+
+# Panel de ficheros, gráficos y ayuda
+
+---
+# Panel de ficheros, gráficos y ayuda
+
+* En RStudio hay un panel que nos permite gestionar los ficheros de nuestro sistema
+&lt;center&gt;
+&lt;img src="img/Rstudio_files_panel.png" width="80%" alt="Panel de archivos"/&gt;
+&lt;/center&gt;
+
+* En este panel podemos seleccionar una carpeta de nuestro ordenador en la que queramos trabajar (hacer click en `...`)  
+
+* Seleccionamos la carpeta que nos interese y en el panel podemos visualizar su contenido.
+
+
+---
+# Panel de ficheros, gráficos y ayuda: directorio de trabajo
+
+* Si queremos que en este trabajo se guarden y cargen los archivos con los que queramos trabajar, entonces podemos decirle a R que este será nuestro __directorio de trabajo__
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_working_directory.png" width="80%" alt="Directorio de trabajo"/&gt;
+&lt;/center&gt;
+
+* Hacemos click en "Set as working directory" y Rstudio ejecuta el comando el comando `setwd(ruta_a_carpeta)`. 
+* A partir de ahora, a R le será mucho más fácil encontrar los archivos ya que no necesitamos poner la ruta de acceso a los mismos. Podemos pasar directamente a la opción de "Imoprt dataset" para cargar un archivo.
+
+
+---
+# Panel de ficheros, gráficos y ayuda: la ayuda en R
+
+* En R podemos acceder a la ayuda de un comando escribiendo `?` delante del comando que nos interese
+
+```r
+?mean
+```
+
+* También podemos acceder a la ayuda de un comando si lo escribimos en una venta de R-script, lo seleccionamos y pulsamos __F1__
+
+---
+# Panel de ficheros, gráficos y ayuda: la ayuda en R
+
+&lt;center&gt;
+&lt;img src="img/R-help.png" width="90%" alt="Ayuda de R"/&gt;
+&lt;/center&gt;
+
+
+---
+# Panel de ficheros, gráficos y ayuda: paquetes de R
+
+* Los paquetes en R son colecciones de funciones y conjunto de datos desarrollados por la comunidad de usuarios de R. Estos incrementan la potencialidad de R mejorando las funcionalidades base en R, o añadiendo de nuevas. 
+
+* El repositorio oficial se llama CRAN recoge cerca de 10.000 paquetes publicados. Si alguien quiere instalar un paquete de CRAN lo puede hacer a con el comando __install.packages()__ o a través del menu Tools-&gt;Install Packages
+&lt;center&gt;
+&lt;img src="img/Rstudio_install_packages.png" width="50%" alt="Instalar paquete"/&gt;
+&lt;/center&gt;
+
+
+---
+# Panel de ficheros, gráficos y ayuda: paquetes de R
+
+* Existe la posibilidad de instalar paquetes desarrollados por usuarios y ubicados en repositorios como GitHub 
+&lt;center&gt;
+&lt;img src="img/Install_GitHub.png" width="100%" alt="Instalar paquete de GitHub"/&gt;
+&lt;/center&gt;
+
+
+---
+class: inverse right middle title-slide2
+
+# Menús de RStudio (OPCIONAL)
+
+
+---
+# Menús de RStudio: File
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_menu_File.png" width="100%" alt="Menú File"/&gt;
+&lt;/center&gt;
+
+---
+# Menús de RStudio: Edit
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_menu_Edit.png" width="100%" alt="Menú Edit"/&gt;
+&lt;/center&gt;
+
+---
+# Menús de RStudio: Code
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_menu_Code.png" width="100%" alt="Menú Code"/&gt;
+&lt;/center&gt;
+
+---
+# Menús de RStudio: View
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_menu_View.png" width="100%" alt="Menú View"/&gt;
+&lt;/center&gt;
+
+
+---
+# Menús de RStudio: Plots
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_menu_Plot.png" width="100%" alt="Menú Plot"/&gt;
+&lt;/center&gt;
+
+
+---
+# Menús de RStudio: Session
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_menu_Session.png" width="100%" alt="Menú Session"/&gt;
+&lt;/center&gt;
+
+---
+# Menús de RStudio: Build
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_menu_Build.png" width="100%" alt="Menú Build"/&gt;
+&lt;/center&gt;
+
+
+---
+# Menús de RStudio: Debug
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_menu_Debug.png" width="100%" alt="Menú Debug"/&gt;
+&lt;/center&gt;
+
+
+---
+# Menús de RStudio: Profile
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_menu_Profile.png" width="100%" alt="Menú Profile"/&gt;
+&lt;/center&gt;
+
+---
+# Menús de RStudio: Tools
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_menu_Tools.png" width="100%" alt="Menú Tools"/&gt;
+&lt;/center&gt;
+
+---
+# Menús de RStudio: Help
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_menu_Help.png" width="100%" alt="Menú Help"/&gt;
+&lt;/center&gt;
+
+
+---
+class: inverse right middle title-slide2
+
+# Proyectos en RStudio (OPCIONAL)
+
+---
+# Proyectos en RStudio: Crear un proyecto
+
+
+.pull-left[
+* A veces tenemos muchos trabajos con R y no queremos mezclar los scripts, los datos, etc... (por ejemplo, diferentes asignaturas o proyectos de trabajo). Incluso, no nos gustar mezclar objetos de diferentes trabajos en el mismo espacio.
+
+* Rstudio nos da la posibilidad de crear para cada trabajo un proyecto y, así, tenerlo todo bien organizado.
+]
+
+
+.pull-right[
+&lt;center&gt;
+&lt;img src="img/Rstudio_create_proj.png" width="50%" alt="Crear proyecto"/&gt;
+&lt;/center&gt;
+
+&lt;center&gt;
+&lt;img src="img/Rstudio_create_proj_2.png" width="50%" alt="Crear proyecto (II)"/&gt;
+&lt;/center&gt;
+]
+
+
+&lt;center&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;img src="img/Rstudio_create_proj_3.png" width="80%" alt="Crear proyecto (III)"/&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;img src="img/Rstudio_create_proj_4.png" width="80%" alt="Crear proyecto (IV)"/&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+
+---
+# Proyectos en RStudio: Crear un proyecto
+
+
+* El proyecto nos permite tener todo lo relacionado con un trabajo en una misma carpeta diferenciado de otros trabajos.
+&lt;center&gt;
+&lt;img src="img/Rstudio_create_proj_5.png" width="80%" alt="Crear proyecto (V)"/&gt;
+&lt;/center&gt;
+
+---
+# Proyectos en RStudio: Crear un proyecto
+
+* Si cerramos nuestra sesión de Rstudio o nuestro proyecto, la próxima vez que volvamos a abrirlo nos recupera todos los objetos que hemos ido creando durante nuestro trabajo. Si queremos borrarlos todos, hacemos click en el icono de la escoba.
+&lt;center&gt;
+&lt;img src="img/Rstudio_environment1.png" width="80%" alt="Guardar workspace"/&gt;
+&lt;/center&gt;
+
+* Al volver a iniciar RStudio abrirá por defecto el último proyecto en el que hayamos estado trabajando.
+
+
+
+---
+class: inverse, mline, center, middle
+
+# Gracias
+
+
+Esta presentación se ha creado con la librería [**xaringan**](https://github.com/yihui/xaringan),
+utilizando [remark.js](https://remarkjs.com), [**knitr**](http://yihui.org/knitr), y [R Markdown](https://rmarkdown.rstudio.com).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
