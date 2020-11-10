@@ -137,6 +137,23 @@ pre {
   width: 50%;
 }
 
+.pull-left3 {
+  float: left;
+  width: 20%;
+}
+.pull-right3 {
+  float: right;
+  width: 80%;
+}
+
+.pull-right2 ~ * { clear: unset; }
+.pull-right2 + * { clear: both; }
+.pull-right2 ~ p { clear: both; }
+
+.pull-right3 ~ * { clear: unset; }
+.pull-right3 + * { clear: both; }
+.pull-right3 ~ p { clear: both; }
+
 .vertical-center-100 {
   position: absolute;
   top: 50%;
