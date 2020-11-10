@@ -8,3 +8,6 @@ https://cpgonzal.github.io/cursoIntroR2020/R_curso01_rstudio.html
 
 ## Introducción al lenguaje R - Rscripts y Rmarkdown.
 https://cpgonzal.github.io/cursoIntroR2020/R_curso01_rscript_rmark.html
+
+## Introducción al lenguaje R - gráficos básicos.
+https://cpgonzal.github.io/cursoIntroR2020/R_curso01_charts.html
