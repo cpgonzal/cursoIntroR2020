@@ -131,7 +131,7 @@ write.table(sleep,file="data1/datos_sleep2.txt",row.names = FALSE, quote=FALSE,s
 
 ```{r data02, echo = TRUE, eval=FALSE, fig.height=5}
 # leer datos de sueño
-#install.packages(readr)
+#install.packages("readr")
 library(readr)
 sleep <- read_delim("https://raw.githubusercontent.com/cpgonzal/cursoIntroR2020/master/data/datos_sleep2.txt", 
         "\t", escape_double = FALSE, trim_ws = TRUE)
@@ -232,7 +232,7 @@ pie(rep(1,n), col=rainbow(n))
 <br/>
 ```{r ejerc01, echo = TRUE, eval=FALSE, out.width = "50%"}
 # Ejercicio 1 (copiar en Rscript y completar) 
-hist(... = )
+hist(...)
 ```
 
 ---
@@ -259,7 +259,7 @@ hist(... = )
 
 ```{r ejerc02, echo = TRUE, eval=FALSE, out.width = "50%"}
 # Ejercicio 2 (copiar en Rscript y completar) 
-hist(... = )
+hist(...)
 ```
 
 
@@ -276,7 +276,7 @@ axis(1,at=seq(0,20,2))
 
 ```{r ejerc03, echo = TRUE, eval=FALSE, out.width = "50%"}
 # Ejercicio 3 (copiar en Rscript y completar) 
-hist(... = )
+hist(...)
 ```
 ---
 
@@ -444,7 +444,7 @@ barplot(frutas[,"kiwis"],col="#8DD3C7",main="Producción de kiwis",ylab="Año",x
 
 ```{r ejerc04, echo = TRUE, eval=FALSE, out.width = "50%"}
 # Ejercicio 4 (copiar en Rscript y completar) 
-barplot(... = )
+barplot(... , )
 ```
 
 
