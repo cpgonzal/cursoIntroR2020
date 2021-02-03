@@ -1,4 +1,4 @@
-# Conoce el lenguaje R: desde los conceptos básicos al tratamiento de datos y gráficos
+# Iniciación a R y Rstudio: desde los conceptos básicos hasta el manejo de datos y gráficos
 
 ## Introducción al lenguaje R - conceptos y fundamentos básicos del lenguaje.
 [https://cpgonzal.github.io/cursoIntroR2020/R_curso01_básicos.html](https://cpgonzal.github.io/cursoIntroR2020/R_curso01_básicos.html)
